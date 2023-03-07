@@ -1,6 +1,7 @@
 package com.afrikatek.mscbeerservice.web.controller;
 
 import com.afrikatek.mscbeerservice.web.model.BeerDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,13 +24,13 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity saveNewBeer(@RequestBody BeerDTO beerDTO){
+    public ResponseEntity saveNewBeer(@Valid @RequestBody BeerDTO beerDTO){
         // TODO add implementation
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity updateBeerById(@PathVariable UUID beerId, @RequestBody BeerDTO beerDTO){
+    public ResponseEntity updateBeerById(@Valid @PathVariable UUID beerId, @RequestBody BeerDTO beerDTO){
         // TODO add implementation
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
